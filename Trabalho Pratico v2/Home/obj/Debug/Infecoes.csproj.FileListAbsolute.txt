@@ -1,0 +1,13 @@
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Infecoes.csprojAssemblyReference.cache
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Home.Home.resources
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Home.Properties.Resources.resources
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Infecoes.csproj.GenerateResource.cache
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Infecoes.csproj.CoreCompileInputs.cache
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\bin\Debug\Home.exe.config
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\bin\Debug\Home.exe
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\bin\Debug\Home.pdb
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Home.exe
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Home.pdb
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Home.Fpacientes.resources
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Home.Menu.resources
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\Trabalho_Pratico_v2\Trabalho Pratico v2\Home\obj\Debug\Home.Fregioes.resources

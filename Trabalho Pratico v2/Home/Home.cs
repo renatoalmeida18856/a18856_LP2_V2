@@ -30,5 +30,12 @@ namespace Home
             Fregioes fp = new Fregioes();
             fp.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Finfecoes fp = new Finfecoes();
+            fp.Show();
+        }
     }
 }

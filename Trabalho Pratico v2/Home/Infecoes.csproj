@@ -50,6 +50,12 @@
     <Compile Include="Classes\Infecoes.cs" />
     <Compile Include="Classes\Paciente.cs" />
     <Compile Include="Classes\Regioes.cs" />
+    <Compile Include="Finfecoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finfecoes.Designer.cs">
+      <DependentUpon>Finfecoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fpacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Finfecoes.resx">
+      <DependentUpon>Finfecoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fpacientes.resx">
       <DependentUpon>Fpacientes.cs</DependentUpon>
     </EmbeddedResource>

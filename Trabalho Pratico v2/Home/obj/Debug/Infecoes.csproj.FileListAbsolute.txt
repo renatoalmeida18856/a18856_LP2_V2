@@ -24,3 +24,4 @@ C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\TP_V2\T
 C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\TP_V2\Trabalho Pratico v2\Home\bin\Debug\Home.exe.config
 C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\TP_V2\Trabalho Pratico v2\Home\bin\Debug\Home.exe
 C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\TP_V2\Trabalho Pratico v2\Home\bin\Debug\Home.pdb
+C:\Users\renat\OneDrive\Ambiente de Trabalho\Licenciatura\2_semestre\lp2\TP_V2\Trabalho Pratico v2\Home\obj\Debug\Home.Finfecoes.resources

@@ -250,7 +250,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(188, 34);
             this.button4.TabIndex = 78;
-            this.button4.Text = "Doenças";
+            this.button4.Text = "Infeções";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -291,7 +291,8 @@
             this.Controls.Add(this.button5);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Finfecoes";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Infeções";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

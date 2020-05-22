@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Infecoes.cs" />
+    <Compile Include="Classes\Paciente.cs" />
     <Compile Include="Classes\Regioes.cs" />
     <Compile Include="Fpacientes.cs">
       <SubType>Form</SubType>

@@ -38,5 +38,60 @@ namespace Home
 
         }
 
+        Classes.Paciente p = new Classes.Paciente();
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            /// <summary>
+            /// Envia o formulario para a base de dados
+            /// </summary>
+            bool ValidPrimeiro = false;
+            bool ValidUltimo = false;
+
+
+            if (textBox5.Text != "")
+            {
+                p.PrimeiroNome = textBox5.Text;
+                ValidPrimeiro = true;
+            }
+            else
+            {
+                ValidPrimeiro = false;
+                MessageBox.Show("Preencha o campo primeiro nome.");
+            }
+
+            if (textBox4.Text != "")
+            {
+                ValidUltimo = true;
+                p.UltimoNome = textBox4.Text;
+            }
+            else
+            {
+                ValidUltimo = false;
+
+                MessageBox.Show("Preencha o campo último nome.");
+            }
+
+            p.Morada = textBox1.Text;
+            p.Genero = comboBox1.Text;
+            p.DataNasc = dateTimePicker1.Value;
+            p.Infetado = checkBox1.Checked;
+
+            // REVER
+            p.Regiao = 1;
+
+            bool sucess = p.Insert(p);
+            if (sucess && ValidPrimeiro && ValidUltimo)
+            {
+                MessageBox.Show("Paciente Adicionado com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Ocorreu um erro por favor tente novamente!");
+            }
+
+            DataTable db = p.Select();
+            dataGridView2.DataSource = db;
+        }
     }
 }

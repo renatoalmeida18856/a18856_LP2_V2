@@ -48,5 +48,21 @@ namespace Home
             DataTable db = r.Select();
             dataGridView2.DataSource = db;
         }
+       
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fpacientes fp = new Fpacientes();
+            fp.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fregioes fp = new Fregioes();
+            fp.Show();
+        }
+
     }
 }

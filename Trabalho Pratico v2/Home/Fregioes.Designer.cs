@@ -70,6 +70,7 @@
             this.button3.TabIndex = 59;
             this.button3.Text = "Regiões";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -90,6 +91,7 @@
             this.button5.TabIndex = 57;
             this.button5.Text = "Pacientes";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 

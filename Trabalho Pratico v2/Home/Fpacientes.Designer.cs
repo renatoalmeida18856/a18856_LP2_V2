@@ -34,6 +34,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.infecoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infetadosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infetadosDataSet = new infetadosDataSet();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,6 +50,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.regioesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,18 +62,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.infetadosDataSet = new infetadosDataSet();
-            this.infetadosDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.regioesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.regioesTableAdapter = new infetadosDataSetTableAdapters.regioesTableAdapter();
-            this.infecoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.infecoesTableAdapter = new infetadosDataSetTableAdapters.infecoesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.infecoesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regioesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infecoesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -129,6 +129,21 @@
             this.comboBox3.TabIndex = 49;
             this.comboBox3.ValueMember = "id";
             // 
+            // infecoesBindingSource
+            // 
+            this.infecoesBindingSource.DataMember = "infecoes";
+            this.infecoesBindingSource.DataSource = this.infetadosDataSetBindingSource;
+            // 
+            // infetadosDataSetBindingSource
+            // 
+            this.infetadosDataSetBindingSource.DataSource = this.infetadosDataSet;
+            this.infetadosDataSetBindingSource.Position = 0;
+            // 
+            // infetadosDataSet
+            // 
+            this.infetadosDataSet.DataSetName = "infetadosDataSet";
+            this.infetadosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -158,6 +173,7 @@
             this.button2.TabIndex = 46;
             this.button2.Text = "Adicionar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView2
             // 
@@ -252,6 +268,11 @@
             this.comboBox2.TabIndex = 36;
             this.comboBox2.ValueMember = "id";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // regioesBindingSource
+            // 
+            this.regioesBindingSource.DataMember = "regioes";
+            this.regioesBindingSource.DataSource = this.infetadosDataSetBindingSource;
             // 
             // label6
             // 
@@ -364,29 +385,9 @@
             this.button5.Text = "Pacientes";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // infetadosDataSet
-            // 
-            this.infetadosDataSet.DataSetName = "infetadosDataSet";
-            this.infetadosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // infetadosDataSetBindingSource
-            // 
-            this.infetadosDataSetBindingSource.DataSource = this.infetadosDataSet;
-            this.infetadosDataSetBindingSource.Position = 0;
-            // 
-            // regioesBindingSource
-            // 
-            this.regioesBindingSource.DataMember = "regioes";
-            this.regioesBindingSource.DataSource = this.infetadosDataSetBindingSource;
-            // 
             // regioesTableAdapter
             // 
             this.regioesTableAdapter.ClearBeforeFill = true;
-            // 
-            // infecoesBindingSource
-            // 
-            this.infecoesBindingSource.DataMember = "infecoes";
-            this.infecoesBindingSource.DataSource = this.infetadosDataSetBindingSource;
             // 
             // infecoesTableAdapter
             // 
@@ -431,12 +432,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fpacientes";
             this.Load += new System.EventHandler(this.Fpacientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.infecoesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regioesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infecoesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

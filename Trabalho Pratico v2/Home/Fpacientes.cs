@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Home.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,7 @@ namespace Home
 
         private void Fpacientes_Load(object sender, EventArgs e)
         {
+
             // TODO: esta linha de código carrega dados na tabela 'infetadosDataSet.infecoes'. Você pode movê-la ou removê-la conforme necessário.
             this.infecoesTableAdapter.Fill(this.infetadosDataSet.infecoes);
             // TODO: esta linha de código carrega dados na tabela 'infetadosDataSet.regioes'. Você pode movê-la ou removê-la conforme necessário.
@@ -36,9 +38,5 @@ namespace Home
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

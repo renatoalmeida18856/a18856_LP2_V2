@@ -37,5 +37,32 @@ namespace Home
             DataTable db = i.Select();
             dataGridView2.DataSource = db;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fpacientes fp = new Fpacientes();
+            fp.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fregioes fp = new Fregioes();
+            fp.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Finfecoes fp = new Finfecoes();
+            fp.Show();
+        }
+
+        private void Finfecoes_Load(object sender, EventArgs e)
+        {
+            DataTable db = i.Select();
+            dataGridView2.DataSource = db;
+        }
     }
 }

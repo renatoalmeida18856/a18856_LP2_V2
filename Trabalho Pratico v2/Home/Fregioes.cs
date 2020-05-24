@@ -64,5 +64,11 @@ namespace Home
             fp.Show();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Finfecoes fp = new Finfecoes();
+            fp.Show();
+        }
     }
 }

@@ -242,6 +242,7 @@
             this.button3.TabIndex = 79;
             this.button3.Text = "Regiões";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -252,6 +253,7 @@
             this.button4.TabIndex = 78;
             this.button4.Text = "Infeções";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -262,6 +264,7 @@
             this.button5.TabIndex = 77;
             this.button5.Text = "Pacientes";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Finfecoes
             // 
@@ -293,6 +296,7 @@
             this.Name = "Finfecoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Infeções";
+            this.Load += new System.EventHandler(this.Finfecoes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

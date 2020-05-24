@@ -79,9 +79,13 @@ namespace Home
             p.Genero = comboBox1.Text;
             p.DataNasc = dateTimePicker1.Value;
             p.Infetado = checkBox1.Checked;
-
-            // REVER
+            p.Recuperado = true;
+            p.Obito = true;
             p.Regiao = 1;
+            p.Infecao = 2;
+
+            //p.Regiao = Int32.Parse(comboBox2.SelectedValue.ToString());
+            //p.Infecao = Int32.Parse(comboBox3.SelectedValue.ToString());
 
             bool sucess = p.Insert(p);
             if (sucess && ValidPrimeiro && ValidUltimo)

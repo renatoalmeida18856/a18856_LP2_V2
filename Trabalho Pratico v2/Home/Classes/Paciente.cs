@@ -18,7 +18,9 @@ namespace Home.Classes
         public string Morada { get; set; }
         public string Genero { get; set; }
         public Boolean Infetado { get; set; }
-        public int Recuperado { get; set; }
+        public Boolean Recuperado { get; set; }
+        public Boolean Obito { get; set; }
+
         public int Infecao { get; set; }
         public int Regiao { get; set; }
 
@@ -59,7 +61,7 @@ namespace Home.Classes
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "INSERT INTO pacientes (nome, apelido, genero, data_nasc , morada, regiao, infetado, recuperado, infecao) VALUES(@nome_proprio, @apelido, @genero, @data_nasc, @morada, @regiao, @infetado, '', '')";
+                string sql = "INSERT INTO pacientes (nome, apelido, genero, data_nasc , morada, regiao, infetado, recuperado, infecao, obito) VALUES(@nome_proprio, @apelido, @genero, @data_nasc, @morada, @regiao, @infetado, @recuperado, @doenca, @obito)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -70,7 +72,9 @@ namespace Home.Classes
                 cmd.Parameters.AddWithValue("@morada", p.Morada);
                 cmd.Parameters.AddWithValue("@regiao", p.Regiao);
                 cmd.Parameters.AddWithValue("@infetado", p.Infetado);
-                //cmd.Parameters.AddWithValue("@doenca", p.Infecao);
+                cmd.Parameters.AddWithValue("@doenca", p.Infecao);
+                cmd.Parameters.AddWithValue("@obito", p.Obito);
+
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();

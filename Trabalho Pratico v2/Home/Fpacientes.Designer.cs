@@ -64,6 +64,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.regioesTableAdapter = new infetadosDataSetTableAdapters.regioesTableAdapter();
             this.infecoesTableAdapter = new infetadosDataSetTableAdapters.infecoesTableAdapter();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.infecoesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infetadosDataSet)).BeginInit();
@@ -396,12 +398,34 @@
             // 
             this.infecoesTableAdapter.ClearBeforeFill = true;
             // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(735, 268);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(43, 17);
+            this.checkBox3.TabIndex = 58;
+            this.checkBox3.Text = "Sim";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(633, 269);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 13);
+            this.label11.TabIndex = 57;
+            this.label11.Text = "Obito ? ";
+            // 
             // Fpacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
@@ -482,5 +506,7 @@
         private infetadosDataSetTableAdapters.regioesTableAdapter regioesTableAdapter;
         private System.Windows.Forms.BindingSource infecoesBindingSource;
         private infetadosDataSetTableAdapters.infecoesTableAdapter infecoesTableAdapter;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -17,9 +17,9 @@ namespace Home.Classes
         public DateTime DataNasc { get; set; }
         public string Morada { get; set; }
         public string Genero { get; set; }
-        public Boolean Infetado { get; set; }
-        public Boolean Recuperado { get; set; }
-        public Boolean Obito { get; set; }
+        public bool Infetado { get; set; }
+        public bool Recuperado { get; set; }
+        public bool Obito { get; set; }
 
         public int Infecao { get; set; }
         public int Regiao { get; set; }
@@ -72,6 +72,7 @@ namespace Home.Classes
                 cmd.Parameters.AddWithValue("@morada", p.Morada);
                 cmd.Parameters.AddWithValue("@regiao", p.Regiao);
                 cmd.Parameters.AddWithValue("@infetado", p.Infetado);
+                cmd.Parameters.AddWithValue("@recuperado", p.Recuperado);
                 cmd.Parameters.AddWithValue("@doenca", p.Infecao);
                 cmd.Parameters.AddWithValue("@obito", p.Obito);
 

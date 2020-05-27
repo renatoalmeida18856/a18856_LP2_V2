@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Home.Classes
 {
@@ -20,7 +21,7 @@ namespace Home.Classes
         public bool Infetado { get; set; }
         public bool Recuperado { get; set; }
         public bool Obito { get; set; }
-
+        public string ExternalId { get; set; }
         public int Infecao { get; set; }
         public int Regiao { get; set; }
 
@@ -61,7 +62,7 @@ namespace Home.Classes
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "INSERT INTO pacientes (nome, apelido, genero, data_nasc , morada, regiao, infetado, recuperado, infecao, obito) VALUES(@nome_proprio, @apelido, @genero, @data_nasc, @morada, @regiao, @infetado, @recuperado, @doenca, @obito)";
+                string sql = "INSERT INTO pacientes (nome, apelido, genero, data_nasc , morada, regiao, infetado, recuperado, infecao, obito, id_externo) VALUES(@nome_proprio, @apelido, @genero, @data_nasc, @morada, @regiao, @infetado, @recuperado, @doenca, @obito, @externalid)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -76,6 +77,12 @@ namespace Home.Classes
                 cmd.Parameters.AddWithValue("@doenca", p.Infecao);
                 cmd.Parameters.AddWithValue("@obito", p.Obito);
 
+                Random rnd = new Random();
+                string externalId = rnd.Next(1, 130000)+"r"+ p.Regiao +"p" + p.PrimeiroNome.Trim().ToLower()+ p.UltimoNome.ToLower() + p.DataNasc.ToString("MM_dd_yyy").ToLower();
+                cmd.Parameters.AddWithValue("@externalid", externalId);
+
+                Infetados i = new Infetados();
+                i.Insert(externalId, p.Regiao, p.Infecao, p.Recuperado, p.Obito);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();

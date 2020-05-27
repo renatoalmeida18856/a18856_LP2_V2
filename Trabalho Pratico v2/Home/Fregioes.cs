@@ -18,11 +18,19 @@ namespace Home
         }
 
         Classes.Regioes r = new Classes.Regioes();
+        Classes.Infetados inf = new Classes.Infetados();
 
         private void Fregioes_Load(object sender, EventArgs e)
         {
             DataTable db = r.Select();
             dataGridView2.DataSource = db;
+
+            //ao click de cada regiao
+            label3.Text = inf.GetInfected(1).ToString();
+            label4.Text = inf.GetRecovers(1).ToString();
+            label5.Text = inf.GetDeaths(1).ToString();
+
+
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)

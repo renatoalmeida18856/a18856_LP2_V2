@@ -117,6 +117,7 @@
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 76;
             this.label5.Text = "125%";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -127,16 +128,17 @@
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 75;
             this.label4.Text = "125000";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(1088, 145);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 74;
             this.label3.Text = "125000";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox7
             // 
@@ -150,8 +152,8 @@
             this.textBox7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox7.Size = new System.Drawing.Size(242, 21);
             this.textBox7.TabIndex = 73;
-            this.textBox7.Text = "Percentagem de não infetados";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox7.Text = "Obitos";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox2
             // 
@@ -165,7 +167,7 @@
             this.textBox2.Size = new System.Drawing.Size(103, 21);
             this.textBox2.TabIndex = 72;
             this.textBox2.Text = "Recuperados";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox4
             // 
@@ -179,7 +181,7 @@
             this.textBox4.Size = new System.Drawing.Size(84, 21);
             this.textBox4.TabIndex = 71;
             this.textBox4.Text = "Infetados";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dataGridView2
             // 

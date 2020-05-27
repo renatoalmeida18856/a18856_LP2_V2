@@ -85,9 +85,10 @@ namespace Home
             p.Infecao = Int32.Parse(comboBox3.SelectedValue.ToString());
 
             bool sucess = p.Insert(p);
+
             if (sucess && ValidPrimeiro && ValidUltimo)
             {
-                MessageBox.Show("Paciente Adicionado com sucesso.");
+               MessageBox.Show("Paciente Adicionado com sucesso.");
             }
             else
             {

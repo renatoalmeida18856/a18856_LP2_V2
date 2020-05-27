@@ -192,6 +192,8 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(776, 254);
             this.dataGridView2.TabIndex = 70;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick_1);
             // 
             // label8
             // 
@@ -299,6 +301,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fregioes";
             this.Load += new System.EventHandler(this.Fregioes_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Fregioes_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

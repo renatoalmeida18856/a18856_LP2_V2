@@ -54,32 +54,33 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1099, 255);
+            this.label5.Location = new System.Drawing.Point(1089, 254);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 96;
-            this.label5.Text = "125%";
+            this.label5.Text = "000000";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1089, 201);
+            this.label4.Location = new System.Drawing.Point(1071, 206);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 95;
-            this.label4.Text = "125000";
+            this.label4.Text = "000000000";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1089, 147);
+            this.label3.Location = new System.Drawing.Point(1056, 154);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 94;
-            this.label3.Text = "125000";
+            this.label3.Text = "000000000000";
             // 
             // textBox7
             // 
@@ -93,7 +94,7 @@
             this.textBox7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox7.Size = new System.Drawing.Size(242, 21);
             this.textBox7.TabIndex = 93;
-            this.textBox7.Text = "Vitimas Mortais";
+            this.textBox7.Text = "Obitos";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox2

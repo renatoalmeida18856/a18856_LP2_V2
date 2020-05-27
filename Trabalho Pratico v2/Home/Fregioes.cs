@@ -24,13 +24,6 @@ namespace Home
         {
             DataTable db = r.Select();
             dataGridView2.DataSource = db;
-
-            //ao click de cada regiao
-            label3.Text = inf.GetInfected(1).ToString();
-            label4.Text = inf.GetRecovers(1).ToString();
-            label5.Text = inf.GetDeaths(1).ToString();
-
-
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -77,6 +70,31 @@ namespace Home
             this.Hide();
             Finfecoes fp = new Finfecoes();
             fp.Show();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Fregioes_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Obter os dados para poder editar ~e obter informaçao
+            int rowIndex = e.RowIndex;
+
+            textBox8.Text = dataGridView2.Rows[rowIndex].Cells[1].Value.ToString();
+            textBox5.Text = dataGridView2.Rows[rowIndex].Cells[2].Value.ToString();
+            int id = Int32.Parse(dataGridView2.Rows[rowIndex].Cells[0].Value.ToString());
+
+            //ao click de cada regiao
+            label3.Text = inf.GetInfected(id).ToString();
+            label4.Text = inf.GetRecovers(id).ToString();
+            label5.Text = inf.GetDeaths(id).ToString();
         }
     }
 }

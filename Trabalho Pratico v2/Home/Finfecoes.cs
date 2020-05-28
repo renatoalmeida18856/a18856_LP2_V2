@@ -18,6 +18,8 @@ namespace Home
         }
 
         Classes.Infecoes i = new Classes.Infecoes();
+        Classes.Infetados inf = new Classes.Infetados();
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -63,11 +65,64 @@ namespace Home
         {
             DataTable db = i.Select();
             dataGridView2.DataSource = db;
+            button1.Hide();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            button2.Hide();
+            button1.Show();
+
+
+            // Obter os dados para poder editar e obter informaçao
+            int rowIndex = e.RowIndex;
+
+            textBox8.Text = dataGridView2.Rows[rowIndex].Cells[1].Value.ToString();
+            textBox5.Text = dataGridView2.Rows[rowIndex].Cells[2].Value.ToString();
+            textBox9.Text = dataGridView2.Rows[rowIndex].Cells[0].Value.ToString();
+
+            int id = Int32.Parse(dataGridView2.Rows[rowIndex].Cells[0].Value.ToString());
+
+            //ao click de cada regiao
+            label3.Text = inf.GetInfectedInfections(id).ToString();
+            label4.Text = inf.GetRecoversInfections(id).ToString();
+            label5.Text = inf.GetDeathsInfections(id).ToString();
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            i.Nome = textBox8.Text;
+            i.Sintomas = textBox5.Text;
+            i.Id = Int32.Parse(textBox9.Text);
+
+
+            bool sucess = i.Update(i);
+            if (sucess)
+            {
+                MessageBox.Show("Regiao editada com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Ocorreu um erro por favor tente novamente!");
+            }
+
+            DataTable db = i.Select();
+            dataGridView2.DataSource = db;
         }
     }
 }

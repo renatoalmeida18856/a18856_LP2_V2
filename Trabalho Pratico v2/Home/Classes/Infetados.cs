@@ -145,7 +145,49 @@ namespace Home.Classes
 
             return count;
         }
-        
+
+        public int GetRecoversInfections(int Rinfecao)
+        {
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM infetados WHERE infecao = @infecao AND recuperado = 1 AND obito = 0", conn);
+            cmd.Parameters.AddWithValue("@infecao ", Rinfecao);
+
+            int count = (Int32)cmd.ExecuteScalar();
+            conn.Close();
+
+            return count;
+        }
+
+        public int GetInfectedInfections(int Rinfecao)
+        {
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM infetados WHERE infecao = @infecao AND recuperado = 0 AND obito = 0;", conn);
+            cmd.Parameters.AddWithValue("@infecao", Rinfecao);
+
+            int count = (Int32)cmd.ExecuteScalar();
+            conn.Close();
+
+            return count;
+        }
+
+        public int GetDeathsInfections(int Rinfecao)
+        {
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM infetados WHERE infecao = @infecao AND obito = 1", conn);
+            cmd.Parameters.AddWithValue("@infecao", Rinfecao);
+
+            int count = (Int32)cmd.ExecuteScalar();
+            conn.Close();
+
+            return count;
+        }
+
         public DataTable GetByRegions()
         {
 

@@ -99,7 +99,7 @@ namespace Home.Classes
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@nome", r.Nome);
-                cmd.Parameters.AddWithValue("@apelido", r.Populacao);
+                cmd.Parameters.AddWithValue("@populacao", r.Populacao);
                 cmd.Parameters.AddWithValue("@id", r.Id);
 
                 conn.Open();

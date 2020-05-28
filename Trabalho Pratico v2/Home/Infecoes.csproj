@@ -57,6 +57,12 @@
     <Compile Include="Finfecoes.Designer.cs">
       <DependentUpon>Finfecoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fdados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fdados.Designer.cs">
+      <DependentUpon>Fdados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fpacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Finfecoes.resx">
       <DependentUpon>Finfecoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fdados.resx">
+      <DependentUpon>Fdados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fpacientes.resx">
       <DependentUpon>Fpacientes.cs</DependentUpon>

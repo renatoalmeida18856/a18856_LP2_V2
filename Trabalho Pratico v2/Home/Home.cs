@@ -37,5 +37,12 @@ namespace Home
             Finfecoes fp = new Finfecoes();
             fp.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dados fp = new Dados();
+            fp.Show();
+        }
     }
 }

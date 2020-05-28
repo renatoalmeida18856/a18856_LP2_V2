@@ -64,5 +64,10 @@ namespace Home
             DataTable db = i.Select();
             dataGridView2.DataSource = db;
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -144,7 +145,54 @@ namespace Home.Classes
 
             return count;
         }
+        
+        public DataTable GetByRegions()
+        {
 
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable db = new DataTable();
+            try
+            {
+                string sql = "SELECT * FROM regioes INNER JOIN infetados ON regioes.id = infetados.regiao INNER JOIN infecoes ON infetados.infecao = infecoes.id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(db);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return db;
+        }
+
+        public DataTable GetByInfection()
+        {
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable db = new DataTable();
+            try
+            {
+                string sql = "SELECT * FROM regioes INNER JOIN infetados ON regioes.id = infetados.regiao INNER JOIN infecoes ON infetados.infecao = infecoes.id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(db);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return db;
+        }
 
     }
 }

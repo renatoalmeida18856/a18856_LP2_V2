@@ -21,5 +21,18 @@ namespace Home
         {
 
         }
+
+        Classes.Infetados i = new Classes.Infetados();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable db = i.GetByRegions();
+            dataGridView1.DataSource = db;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

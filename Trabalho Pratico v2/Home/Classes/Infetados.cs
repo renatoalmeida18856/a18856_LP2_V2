@@ -17,50 +17,24 @@ namespace Home.Classes
 
         public bool Check(string Rpaciente,int Rregiao, int Rinfecao, bool Rinfetado, bool Rrecuperado, bool Robito, int type)
         {
-            bool isSucess = false;
 
-            if (type == 1) { 
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM infetados WHERE paciente = @externalId AND infecao = @infecao", conn);
+            cmd.Parameters.AddWithValue("@externalId", Rpaciente.Trim(' '));
+            cmd.Parameters.AddWithValue("@infecao", Rinfecao);
 
-                MessageBox.Show(Rpaciente);
-                SqlConnection conn = new SqlConnection(myconnstrng);
-                try
-                {
-                    string sql = "SELECT * FROM infetados WHERE paciente = '" + Rpaciente.Trim(' ') + "' AND infecao = "+ (Rinfecao - 1);
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    //cmd.Parameters.AddWithValue("@paciente", Rpaciente.Trim('');
-                    //cmd.Parameters.AddWithValue("@regiao", Rregiao);
-                    //cmd.Parameters.AddWithValue("@infecao", (Rinfecao - 1));
-                    //cmd.Parameters.AddWithValue("@infetado", Rinfetado);
-                    //cmd.Parameters.AddWithValue("@recuperado", Rrecuperado);
-                    //cmd.Parameters.AddWithValue("@obito", Robito);
-                    MessageBox.Show(sql);
-                    conn.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    MessageBox.Show(rows.ToString());
-                    if (rows > 0)
-                    {
-                        isSucess = true;
-                    }
-                    else
-                    {
-                        isSucess = false;
-                    }
+            int count = (Int32)cmd.ExecuteScalar();
+            conn.Close();
 
-                }
-                catch (Exception ex)
-                {
-
-                }
-                finally
-                {
-                    conn.Close();
-                }
-
-            }else if(type == 2) {
-
+            if(count > 0)
+            {
+                return true;
             }
-
-            return isSucess;
+            else {
+                return false;
+            }
+            
 
         }
 
@@ -75,7 +49,7 @@ namespace Home.Classes
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@paciente", Rpaciente);
+                cmd.Parameters.AddWithValue("@paciente", Rpaciente.Trim(' '));
                 cmd.Parameters.AddWithValue("@regiao", Rregiao);
                 cmd.Parameters.AddWithValue("@recuperado", Rrecuperado);
                 cmd.Parameters.AddWithValue("@infecao", Rinfecao);
@@ -115,14 +89,14 @@ namespace Home.Classes
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "UPDATE INTO infetados paciente, regiao, infecao, recuperado, obito) VALUES(@paciente, @regiao, @infecao, @recuperado, @obito)";
+                string sql = "UPDATE infetados SET regiao = @regiao, recuperado= @recuperado, obito= @obito WHERE paciente = @externalId AND infecao = @infecao";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@paciente", Rpaciente);
+                cmd.Parameters.AddWithValue("@externalId", Rpaciente.Trim(' '));
+                cmd.Parameters.AddWithValue("@infecao", Rinfecao);
                 cmd.Parameters.AddWithValue("@regiao", Rregiao);
                 cmd.Parameters.AddWithValue("@recuperado", Rrecuperado);
-                cmd.Parameters.AddWithValue("@infecao", Rinfecao);
                 cmd.Parameters.AddWithValue("@obito", Robito);
 
                 conn.Open();

@@ -133,35 +133,28 @@ namespace Home
             p.Genero = comboBox1.Text;
             p.DataNasc = dateTimePicker1.Value;
             p.Infetado = checkBox1.Checked;
-            p.Recuperado = true;
-            p.Obito = true;
+            p.Recuperado = checkBox2.Checked; ;
+            p.Obito = checkBox3.Checked; ;
             p.Regiao = Int32.Parse(comboBox2.SelectedValue.ToString());
             p.Infecao = Int32.Parse(comboBox3.SelectedValue.ToString());
 
-            //if (p.Infetado)
-            //{
-
-                //bool check = inf.Check(p.ExternalId, p.Regiao, p.Infecao, p.Infetado, p.Recuperado, p.Obito , 1);
+            if (p.Infetado)
+            {
                 //verifica se ja tem registo com esta infececao
+                bool check = inf.Check(p.ExternalId, p.Regiao, p.Infecao, p.Infetado, p.Recuperado, p.Obito , 1);
                 //se sim 
-               // if (check)
-                //{
-                    //verifica se esta recuperado ou obito
-
-                    //if (p.Recuperado)
-                    //{
-
-                    //}else if (p.Obito) {
-                        
-                   // }
-                //}
-               // else
-                //{
+                if (check)
+                {
+                    //Atualiza os dados
+                    inf.Update(p.ExternalId, p.Regiao, p.Infecao, p.Recuperado, p.Obito);
+                }
+                else
+                {
                     //se nao, adiciona ha tabela infetados
-                    //inf.Insert(p.ExternalId, p.Regiao, p.Infecao, p.Recuperado, p.Obito);
-               // }
+                    inf.Insert(p.ExternalId, p.Regiao, p.Infecao, p.Recuperado, p.Obito);
+                }
 
-           // }
+            }
 
             bool sucess = p.Update(p);
 
@@ -193,8 +186,8 @@ namespace Home
             comboBox1.Text = dataGridView2.Rows[rowIndex].Cells[3].Value.ToString();
             //dateTimePicker1 = dataGridView2.Rows[rowIndex].Cells[4].Value();
             textBox2.Text = dataGridView2.Rows[rowIndex].Cells[5].Value.ToString();
-            comboBox2.SelectedIndex = Int32.Parse(dataGridView2.Rows[rowIndex].Cells[6].Value.ToString());
-            comboBox3.SelectedIndex = Int32.Parse(dataGridView2.Rows[rowIndex].Cells[9].Value.ToString());
+            comboBox2.SelectedValue = Int32.Parse(dataGridView2.Rows[rowIndex].Cells[6].Value.ToString());
+            comboBox3.SelectedValue = Int32.Parse(dataGridView2.Rows[rowIndex].Cells[9].Value.ToString());
 
             if (dataGridView2.Rows[rowIndex].Cells[7].Value.ToString() == "1")
             {

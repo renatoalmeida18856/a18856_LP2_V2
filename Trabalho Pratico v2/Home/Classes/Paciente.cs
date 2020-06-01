@@ -123,7 +123,6 @@ namespace Home.Classes
             try
             {
                 string sql = "UPDATE pacientes SET nome=@nome_proprio, apelido=@apelido, genero=@genero, data_nasc=@data_nasc,morada=@morada, regiao=@regiao, infetado=@infetado, infecao=@doenca , obito=@obito, recuperado=@recuperado WHERE id = @id";
-                MessageBox.Show(p.Id.ToString());
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 

@@ -118,10 +118,12 @@ namespace Home.Classes
 
             bool isSucess = false;
 
+
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "UPDATE pacientes SET nome=@nome_proprio, apelido=@apelido, genero=@genero, data_nasc=@data_nasc,morada=@morada, regiao=@regiao, infetado=@infetado, infecao=@doenca WHERE id = @id";
+                string sql = "UPDATE pacientes SET nome=@nome_proprio, apelido=@apelido, genero=@genero, data_nasc=@data_nasc,morada=@morada, regiao=@regiao, infetado=@infetado, infecao=@doenca , obito=@obito, recuperado=@recuperado WHERE id = @id";
+                MessageBox.Show(p.Id.ToString());
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -132,12 +134,13 @@ namespace Home.Classes
                 cmd.Parameters.AddWithValue("@morada", p.Morada);
                 cmd.Parameters.AddWithValue("@regiao", p.Regiao);
                 cmd.Parameters.AddWithValue("@infetado", p.Infetado);
+                cmd.Parameters.AddWithValue("@recuperado", p.Recuperado);
                 cmd.Parameters.AddWithValue("@doenca", p.Infecao);
+                cmd.Parameters.AddWithValue("@obito", p.Obito);
                 cmd.Parameters.AddWithValue("@id", p.Id);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
-
                 if (rows > 0)
                 {
                     isSucess = true;

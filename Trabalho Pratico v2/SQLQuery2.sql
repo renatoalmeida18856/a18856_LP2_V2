@@ -1,0 +1,1 @@
+﻿SELECT * FROM infetados WHERE paciente = '37448r1p1312306_01_2020' AND infecao = 1

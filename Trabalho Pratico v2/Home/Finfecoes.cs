@@ -29,7 +29,7 @@ namespace Home
             bool sucess = i.Insert(i);
             if (sucess)
             {
-                MessageBox.Show("Regiao adicionada com sucesso.");
+                MessageBox.Show("Infeção adicionada com sucesso.");
             }
             else
             {

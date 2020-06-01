@@ -15,22 +15,70 @@ namespace Home.Classes
 
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
-        public bool Check(string Rpaciente,int Rregiao, int Rinfecao, bool Rinfetado, bool Rrecuperado, bool Robito)
+        public bool Check(string Rpaciente,int Rregiao, int Rinfecao, bool Rinfetado, bool Rrecuperado, bool Robito, int type)
         {
+            bool isSucess = false;
 
+            if (type == 1) { 
+
+                MessageBox.Show(Rpaciente);
+                SqlConnection conn = new SqlConnection(myconnstrng);
+                try
+                {
+                    string sql = "SELECT * FROM infetados WHERE paciente = '" + Rpaciente.Trim(' ') + "' AND infecao = "+ (Rinfecao - 1);
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    //cmd.Parameters.AddWithValue("@paciente", Rpaciente.Trim('');
+                    //cmd.Parameters.AddWithValue("@regiao", Rregiao);
+                    //cmd.Parameters.AddWithValue("@infecao", (Rinfecao - 1));
+                    //cmd.Parameters.AddWithValue("@infetado", Rinfetado);
+                    //cmd.Parameters.AddWithValue("@recuperado", Rrecuperado);
+                    //cmd.Parameters.AddWithValue("@obito", Robito);
+                    MessageBox.Show(sql);
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    MessageBox.Show(rows.ToString());
+                    if (rows > 0)
+                    {
+                        isSucess = true;
+                    }
+                    else
+                    {
+                        isSucess = false;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }else if(type == 2) {
+
+            }
+
+            return isSucess;
+
+        }
+
+        public bool Insert(string Rpaciente, int Rregiao, int Rinfecao, bool Rrecuperado, bool Robito)
+        {
             bool isSucess = false;
 
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "SELECT * FROM infetados WHERE `paciente` = @paciente AND `regiao` = @regiao AND `infecao` = @infecao AND  `recuperado` = @recuperado AND `obito` = @obito";
+                string sql = "INSERT INTO infetados (paciente, regiao, infecao, recuperado, obito) VALUES(@paciente, @regiao, @infecao, @recuperado, @obito)";
+
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@paciente", Rpaciente);
                 cmd.Parameters.AddWithValue("@regiao", Rregiao);
-                cmd.Parameters.AddWithValue("@infecao", Rinfecao);
-                cmd.Parameters.AddWithValue("@infetado", Rinfetado);
                 cmd.Parameters.AddWithValue("@recuperado", Rrecuperado);
+                cmd.Parameters.AddWithValue("@infecao", Rinfecao);
                 cmd.Parameters.AddWithValue("@obito", Robito);
 
                 conn.Open();
@@ -60,14 +108,14 @@ namespace Home.Classes
 
         }
 
-        public bool Insert(string Rpaciente, int Rregiao, int Rinfecao, bool Rrecuperado, bool Robito)
+        public bool Update(string Rpaciente, int Rregiao, int Rinfecao, bool Rrecuperado, bool Robito)
         {
             bool isSucess = false;
 
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "INSERT INTO infetados (paciente, regiao, infecao, recuperado, obito) VALUES(@paciente, @regiao, @infecao, @recuperado, @obito)";
+                string sql = "UPDATE INTO infetados paciente, regiao, infecao, recuperado, obito) VALUES(@paciente, @regiao, @infecao, @recuperado, @obito)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
